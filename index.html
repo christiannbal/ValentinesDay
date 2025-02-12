@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <div class="container">
+
+    <!-- First screen: Proposal -->
+    <div class="container" id="proposalScreen">
         <h1>Will you be my Valentine?</h1>
         <img src="images/dino.jpg" alt="Cute dino" class="dino-image">
         
@@ -16,6 +18,14 @@
             <button id="yesButton">Yes</button>
             <button id="no">No</button>
         </div>
+    </div>
+
+    <!-- Second screen: Celebration (initially hidden) -->
+    <div class="celebration-screen" id="celebrationScreen">
+        <div class="hearts-container"></div> <!-- Hearts animation container -->
+        <h1 class="love-text">I LOVE YOU</h1>
+        <img src="images/kat.gif" alt="Celebration GIF" class="celebration-dino">
+        <h2 class="hooray-text">HOOORAAYYY!! You may now claim your FREE Milkshake!! (valid at ANY store) 🎉</h2>
     </div>
 
     <script src="script.js"></script> <!-- Link to external JavaScript -->

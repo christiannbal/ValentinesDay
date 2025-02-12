@@ -10,6 +10,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
 /* Center the container */
@@ -21,71 +22,82 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-}
-
-/* Center the image */
-.dino-image {
-    width: 300px; /* Adjust size */
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Center the buttons */
-.button-container {
-    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    gap: 20px; /* Space between buttons */
-    margin-top: 15px;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Button styling */
-button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+/* Celebration screen */
+.celebration-screen {
+    display: none; /* Hidden initially */
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: pink;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Yes button */
-#yesButton {
-    background-color: #4caf50;
+/* Large text saying "I LOVE YOU" */
+.love-text {
+    font-size: 3rem;
+    font-weight: bold;
     color: white;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#yesButton:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
+/* Celebration GIF */
+.celebration-dino {
+    width: 300px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 100px;
+    animation: bounce 2s infinite; /* Optional: Bounce effect */
 }
 
-/* No button */
-#no {
-    background-color: #f44336;
+/* Hooray text */
+.hooray-text {
+    font-size: 1.5rem;
+    margin-top: 20px;
     color: white;
-    position: relative; /* Reset for no button */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-#no:hover {
-    background-color: #e53935;
-    transform: scale(1.1);
+/* Floating hearts */
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
 }
 
-/* Bounce animation for the dino image */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.dino-image {
-    animation: bounce 2s infinite; /* Apply bounce animation */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 2rem;
+    animation: float 5s linear infinite;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Optional: Floating heart GIF styling */
+.heart-gif {
+    width: 30px;
+    height: 30px;
+    position: absolute;
 }
