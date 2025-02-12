@@ -23,10 +23,10 @@ noButton.addEventListener("mouseover", function() {
 
 // Function to create floating hearts
 function createFloatingHearts() {
-    for (let i = 0; i < 20; i++) { // Generate 20 hearts
+    for (let i = 0; i < 30; i++) { // Generate 30 hearts
         let heart = document.createElement("div");
         heart.classList.add("heart");
-        heart.innerHTML = '<img src="images/heart.gif" class="heart-gif">'; // Heart GIF instead of emoji
+        heart.innerHTML = "❤️"; // Red heart emoji
         heart.style.left = Math.random() * 100 + "vw"; // Random position
         heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random speed
         heartsContainer.appendChild(heart);
