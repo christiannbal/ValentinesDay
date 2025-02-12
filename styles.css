@@ -82,17 +82,17 @@ button {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Large text saying "I LOVE YOU" */
+/* Large text saying "I LOVE YOU" (moved below everything) */
 .love-text {
     font-size: 4rem;
     font-weight: bold;
     color: #b30000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: absolute;
-    top: 25%; /* Moved it higher so it doesn’t overlap the GIF */
+    bottom: 5%; /* Moved to bottom */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10; /* Ensures it stays on top of everything */
+    z-index: 10; /* Ensures it stays visible */
 }
 
 
