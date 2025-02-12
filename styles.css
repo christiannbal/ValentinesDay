@@ -29,6 +29,16 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Cat image styling */
+.cat-image {
+    width: 200px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: bounce 2s infinite; /* Add bounce animation */
+}
+
 /* Button styling */
 button {
     padding: 15px 30px;
@@ -60,4 +70,14 @@ button {
 #no:hover {
     background-color: #e53935;
     transform: scale(1.1);
+}
+
+/* Bounce animation for the cat image */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
