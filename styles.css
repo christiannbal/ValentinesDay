@@ -29,7 +29,7 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Style the buttons with proper colors and size */
+/* Style the buttons */
 .button-container {
     display: flex;
     justify-content: center;
@@ -49,7 +49,7 @@ button {
 
 /* Yes button */
 #yesButton {
-    background-color: #4caf50; /* Green */
+    background-color: #4caf50;
     color: white;
 }
 
@@ -60,7 +60,7 @@ button {
 
 /* No button */
 #no {
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
     color: white;
     position: relative;
 }
@@ -82,17 +82,19 @@ button {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Large text saying "I LOVE YOU" above the GIF */
+/* Large text saying "I LOVE YOU" */
 .love-text {
     font-size: 4rem;
     font-weight: bold;
-    color: #b30000; /* Dark Red */
+    color: #b30000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     position: absolute;
-    top: 5%;
+    top: 25%; /* Moved it higher so it doesn’t overlap the GIF */
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10; /* Ensures it stays on top of everything */
 }
+
 
 /* Celebration GIF */
 .celebration-dino {
@@ -100,29 +102,23 @@ button {
     height: auto;
     border-radius: 15px;
     margin-top: 80px;
-    animation: bounce 2s infinite; /* Optional: Bounce effect */
+    animation: bounce 2s infinite;
 }
 
 /* Hooray text */
-.hooray-text {
+.hooray-text, .extra-text {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #b30000; /* Dark Red */
+    color: #b30000;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
     margin-top: 20px;
 }
 
-/* Floating hearts */
+/* Floating hearts animation */
 @keyframes float {
     0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
     100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
-}
-
-.hearts-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
 .heart {
@@ -132,7 +128,7 @@ button {
     animation: float 5s linear infinite;
 }
 
-/* Floating spinning "I LOVE YOU" text */
+/* Spinning "I LOVE YOU" text */
 @keyframes spinText {
     0% { transform: rotate(0deg) translateY(0); opacity: 1; }
     50% { transform: rotate(180deg) translateY(-30px); opacity: 0.8; }
@@ -143,17 +139,22 @@ button {
     position: absolute;
     font-size: 2rem;
     font-weight: bold;
-    color: #b30000; /* Dark Red */
+    color: #b30000;
     animation: spinText 5s linear infinite;
 }
 
-/* Extra text at the bottom */
-.extra-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #b30000; /* Dark Red */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    margin-top: 30px;
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* Bounce animation for the GIF */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

@@ -1,5 +1,12 @@
+// Get elements
+const yesButton = document.getElementById("yesButton");
+const noButton = document.getElementById("no");
+const proposalScreen = document.getElementById("proposalScreen");
+const celebrationScreen = document.getElementById("celebrationScreen");
+const heartsContainer = document.querySelector(".hearts-container");
+
 // Create an audio object for the music
-const backgroundMusic = new Audio("music/Sexy.mp3"); // Updated file name
+const backgroundMusic = new Audio("music/Sexy.mp3");
 backgroundMusic.loop = true;
 
 // Function to fade in music & start at 15 seconds
@@ -14,7 +21,7 @@ function fadeInMusic(audio) {
             volume += 0.05; // Gradually increase volume
             audio.volume = volume;
         } else {
-            clearInterval(fadeInterval); // Stop increasing volume at max
+            clearInterval(fadeInterval);
         }
     }, 200);
 }
@@ -42,7 +49,7 @@ function createFloatingHearts() {
         heart.innerHTML = "❤️";
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-        heartsContainer.appendChild(heart);
+        document.body.appendChild(heart); // Append to the body for visibility
 
         setTimeout(() => {
             heart.remove();
@@ -59,10 +66,20 @@ function createSpinningText() {
         spinText.style.left = Math.random() * 90 + "vw";
         spinText.style.top = Math.random() * 80 + "vh";
         spinText.style.animationDuration = Math.random() * 4 + 3 + "s";
-        document.body.appendChild(spinText);
+        document.body.appendChild(spinText); // Append to the body for visibility
 
         setTimeout(() => {
             spinText.remove();
         }, 7000);
     }
 }
+
+// "No" button moves away when hovered over
+noButton.addEventListener("mouseover", function() {
+    let i = Math.floor(Math.random() * (window.innerWidth - 100)); // Prevent overflow
+    let j = Math.floor(Math.random() * (window.innerHeight - 50));
+    
+    noButton.style.position = "absolute";
+    noButton.style.left = `${i}px`;
+    noButton.style.top = `${j}px`;
+});
