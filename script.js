@@ -9,6 +9,7 @@ yesButton.addEventListener("click", function() {
     proposalScreen.style.display = "none"; // Hide first screen
     celebrationScreen.style.display = "block"; // Show celebration screen
     createFloatingHearts(); // Trigger heart animation
+    createSpinningText(); // Trigger spinning "I LOVE YOU" text animation
 });
 
 // When "No" is hovered over, move it randomly
@@ -35,5 +36,23 @@ function createFloatingHearts() {
         setTimeout(() => {
             heart.remove();
         }, 5000);
+    }
+}
+
+// Function to create spinning "I LOVE YOU" text randomly
+function createSpinningText() {
+    for (let i = 0; i < 10; i++) { // Generate 10 spinning text elements
+        let spinText = document.createElement("div");
+        spinText.classList.add("spinning-text");
+        spinText.innerHTML = "I LOVE YOU 💖";
+        spinText.style.left = Math.random() * 90 + "vw"; // Random position
+        spinText.style.top = Math.random() * 80 + "vh"; // Random height
+        spinText.style.animationDuration = Math.random() * 4 + 3 + "s"; // Random spin duration
+        document.body.appendChild(spinText);
+
+        // Remove text after animation completes
+        setTimeout(() => {
+            spinText.remove();
+        }, 7000);
     }
 }
