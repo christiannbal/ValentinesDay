@@ -6,13 +6,12 @@ const heartsContainer = document.querySelector(".hearts-container");
 
 // When "Yes" is clicked, switch to the celebration screen
 yesButton.addEventListener("click", function() {
-    proposalScreen.style.display = "none"; // Hide first screen
-    celebrationScreen.style.display = "block"; // Show celebration screen
-    createFloatingHearts(); // Trigger heart animation
-    createSpinningText(); // Trigger spinning "I LOVE YOU" text animation
+    proposalScreen.style.display = "none"; 
+    celebrationScreen.style.display = "block"; 
+    createFloatingHearts(); 
+    createSpinningText(); 
 });
 
-// When "No" is hovered over, move it randomly
 var noButton = document.getElementById("no");
 noButton.addEventListener("mouseover", function() {
     var i = Math.floor(Math.random() * window.innerWidth - 100);
@@ -28,11 +27,10 @@ function createFloatingHearts() {
         let heart = document.createElement("div");
         heart.classList.add("heart");
         heart.innerHTML = "❤️"; // Red heart emoji
-        heart.style.left = Math.random() * 100 + "vw"; // Random position
-        heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random speed
+        heart.style.left = Math.random() * 100 + "vw"; 
+        heart.style.animationDuration = Math.random() * 3 + 2 + "s"; 
         heartsContainer.appendChild(heart);
 
-        // Remove heart after animation completes
         setTimeout(() => {
             heart.remove();
         }, 5000);
