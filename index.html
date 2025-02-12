@@ -4,37 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Proposal</title>
-    <style>
-        div {
-            text-align: center;
-            vertical-align: middle;
-            margin-top: 20%;
-        }
-
-        #no {
-            position: absolute;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Will you be my Valentine?</h1>
         <button id="yesButton">Yes</button>
         <button id="no">No</button>
     </div>
 
-    <script>
-        document.getElementById("yesButton").addEventListener("click", function() {
-            alert("I love you! Now you can redeem your milkshake!");
-        });
-
-        var noButton = document.getElementById("no");
-        noButton.addEventListener("mouseover", function() {
-            var i = Math.floor(Math.random() * window.innerWidth);
-            var j = Math.floor(Math.random() * window.innerHeight);
-            noButton.style.left = i + "px";
-            noButton.style.top = j + "px";
-        });
-    </script>
+    <script src="script.js"></script> <!-- Link to external JavaScript -->
 </body>
 </html>
