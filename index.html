@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        div {
+            text-align: center;
+            vertical-align: middle;
+            margin-top: 20%;
+        }
 
+        #no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Will you be my Valentine?</h1>
+        <button id="yesButton">Yes</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            alert("I love you! See you soon again!");
+        });
+
+        var noButton = document.getElementById("no");
+        noButton.addEventListener("mouseover", function() {
+            var i = Math.floor(Math.random() * window.innerWidth);
+            var j = Math.floor(Math.random() * window.innerHeight);
+            noButton.style.left = i + "px";
+            noButton.style.top = j + "px";
+        });
+    </script>
+</body>
+</html>
