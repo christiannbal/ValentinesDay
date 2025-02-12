@@ -1,6 +1,6 @@
 // Add event listener to the "Yes" button
 document.getElementById("yesButton").addEventListener("click", function() {
-    alert("I love you! See you soon again!");
+    alert("I love you! Now you can claim your milkshake!");
 });
 
 // Add event listener to the "No" button
