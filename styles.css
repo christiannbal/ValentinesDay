@@ -12,7 +12,7 @@ body {
     overflow: hidden;
 }
 
-/* Container for the content */
+/* Center the container */
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.2);
@@ -20,23 +20,27 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
 }
 
-/* Heading styling */
-h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Cat image styling */
-.cat-image {
-    width: 200px; /* Adjust the size as needed */
+/* Center the image */
+.dino-image {
+    width: 300px; /* Adjust size */
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    animation: bounce 2s infinite; /* Add bounce animation */
+}
+
+/* Center the buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 15px;
 }
 
 /* Button styling */
@@ -46,11 +50,10 @@ button {
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    margin: 10px;
     transition: all 0.3s ease;
 }
 
-/* Yes button styling */
+/* Yes button */
 #yesButton {
     background-color: #4caf50;
     color: white;
@@ -61,10 +64,11 @@ button {
     transform: scale(1.1);
 }
 
-/* No button styling */
+/* No button */
 #no {
     background-color: #f44336;
     color: white;
+    position: relative; /* Reset for no button */
 }
 
 #no:hover {
@@ -72,7 +76,7 @@ button {
     transform: scale(1.1);
 }
 
-/* Bounce animation for the cat image */
+/* Bounce animation for the dino image */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(0);
@@ -80,4 +84,8 @@ button {
     50% {
         transform: translateY(-10px);
     }
+}
+
+.dino-image {
+    animation: bounce 2s infinite; /* Apply bounce animation */
 }
